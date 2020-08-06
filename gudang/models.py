@@ -10,7 +10,7 @@ class Supplier(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name 
+        return self.nama
 
 class Distributor(models.Model):
 
@@ -42,7 +42,7 @@ class DetailSupplier(models.Model):
 
 class DetailDistributor(models.Model):
 
-    supplier = models.ForeignKey('Supplier', on_delete=models.CASCADE)
+    distributor = models.ForeignKey('Distributor', on_delete=models.CASCADE)
     barang = models.ForeignKey('Barang', on_delete=models.CASCADE)
     total =  models.PositiveSmallIntegerField(default=0)
     
